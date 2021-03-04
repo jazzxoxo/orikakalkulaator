@@ -1,0 +1,32 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div>
+      <input type="text" id='paljuraha'>
+      <button onclick="tsykkel()">tsyklisse!</button>
+      <br />
+      <p id="jaure"></p>
+    </div>
+    <p id="jaure"></p>
+    <script>
+      function tsykkel() {
+        var hind = 1.20;
+        var taara = 0.10;
+        var kokku = 0;
+        var raha = document.getElementById("paljuraha").value;
+        var paev = 1;
+        var loba = '';
+        while (raha>=hind) {
+          var palju = Math.floor(raha/hind);
+          kokku += palju;
+          raha -= palju*hind;
+          raha += palju*taara;
+          loba += '<br>'+ paev + '. tsukkel! sa saad ' + palju + ' purki ning peale taara viimist on sul alles ' + raha.toFixed(2) + ' eurot!';
+          paev ++;
+        };
+        loba += '<br>'+ 'oma tsykliga said kokku ' + kokku + ' purki. see on kokku ' + kokku/2 + ' liitrit eestimaiset 6lu';
+        document.getElementById("jaure").innerHTML = loba;}
+    </script>
+  </body>
+</html>
